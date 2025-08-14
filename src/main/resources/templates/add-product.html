@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"&gt;>
+<head>
+    <title>Add/Edit Product</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"&gt;>
+</head>
+<body>
+<div class="container mt-5">
+    <h2 th:text="${product.id == null ? 'Add Product' : 'Edit Product'}"></h2>
+    <form th:action="@{/admin/product/save}" th:object="${product}" method="post" enctype="multipart/form-data">
+
+        <input type="hidden" th:field="*{id}">
+        <div class="mb-3">
+            <label>Name</label>
+            <input type="text" class="form-control" th:field="*{name}" required>
+        </div>
+        <div class="mb-3">
+            <label>Description</label>
+            <textarea class="form-control" th:field="*{description}" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label>Price</label>
+            <input type="number" step="0.01" class="form-control" th:field="*{price}" required>
+        </div>
+        <div class="mb-3">
+            <label>Stock</label>
+            <input type="number" class="form-control" th:field="*{stock}" required>
+        </div>
+        <div class="mb-3">
+            <label>Product Image</label>
+            <input type="file" name="imageFile" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-success">Save</button>
+        <a href="/admin/dashboard" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+<div th:if="${param.error}" class="alert alert-danger">
+    Product could not be saved. Please try again.
+</div>
+<div th:if="${param.success}" class="alert alert-info">
+    Product has been saved successfully.
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"&gt;>
+<html>
+<head>
+    <title>Your Orders</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"&gt;>
+</head>
+<body>
+<div class="container mt-4">
+    <h2>Your Orders</h2>
+    <a href="/user/dashboard" class="btn btn-secondary mb-3">← Back to Dashboard</a>
+    <div th:each="order : ${orders}" class="card mb-3">
+        <div class="card-header">
+            Order ID: <strong th:text="${order.id}"></strong> |
+            Date: <span th:text="${#temporals.format(order.orderDate, 'dd-MM-yyyy HH:mm')}"></span> |
+            Total: ₹ <span th:text="${order.totalAmount}"></span>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item" th:each="item : ${order.items}">
+                <span th:text="${item.product.name}"></span> -
+                ₹<span th:text="${item.price}"></span> ×
+                <span th:text="${item.quantity}"></span>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
+
