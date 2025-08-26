@@ -4,19 +4,21 @@ An eCommerce web application that allows users to browse products, add items to 
 
 ***Features:***
 
-Browse and search products
+--Browse and search products
 
-Add/remove items to cart
+--Add/remove items to cart
 
-User authentication & profile management
+--User authentication & profile management
 
-Admin dashboard for managing products, users, and orders
+--Admin dashboard for managing products, users, and orders
 
 ***Tech Stack:***
 
-Frontend: HTML/CSS + Thymleaf
-Backend: Springboot(Java)
-Database: MongoDB / MySQL
+--Frontend: HTML/CSS + Thymleaf
+
+--Backend: Springboot(Java)
+
+--Database: MongoDB / MySQL
 
 
 
@@ -24,25 +26,25 @@ Database: MongoDB / MySQL
 
 ***Installation & Setup:***
 
-1️⃣ Clone the repository
+--Clone the repository
 
 git clone https://github.com/AdityaGoyal01/ecommerce.git
 
 cd ecommerce
 
-Run the application : mvn spring-boot:run
+--Run the application : mvn spring-boot:run
 
 ***For Contributing:***
 
-Fork the repo
+--Fork the repo
 
-Create a new branch (feature/your-feature)
+--Create a new branch (feature/your-feature)
 
-Commit your changes (git commit -m 'Add feature')
+--Commit your changes (git commit -m 'Add feature')
 
-Push to the branch (git push origin feature/your-feature)
+--Push to the branch (git push origin feature/your-feature)
 
-Open a Pull Request
+--Open a Pull Request
 
 ***License***
 
